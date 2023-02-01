@@ -1,14 +1,19 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Skewer : MonoBehaviour
 {
     public SphereCollider DetectionSphere;
-
     public GameObject ForagableMushroom;
+    public List<GameObject> SkewerSpots;
 
     private HashSet<GameObject> MushroomsSkewered;
+
+    void Start()
+    {
+        MushroomsSkewered = new HashSet<GameObject>();
+    }
 
     void Update()
     {
@@ -34,5 +39,26 @@ public class Skewer : MonoBehaviour
                 closestSqrDist = sqrDist;
             }
         }
+
+        // TODO: Add interaction check for skewering...
+        if (ForagableMushroom != null)
+        {
+            TryCollectMushroom();
+        }
+        
+    }
+
+    void TryCollectMushroom()
+    {
+        Debug.Log("Can we try?");
+        if (ForagableMushroom is null || MushroomsSkewered.Count >= SkewerSpots.Count)
+            return;
+        Debug.Log("We will try!");
+        GameObject mushroom = ForagableMushroom;
+        ForagableMushroom = null;
+        mushroom.transform.position = SkewerSpots[MushroomsSkewered.Count].transform.position;
+        mushroom.transform.parent = SkewerSpots[MushroomsSkewered.Count].transform;
+        MushroomsSkewered.Add(mushroom);
+        mushroom.GetComponent<SphereCollider>().enabled = false;
     }
 }
