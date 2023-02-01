@@ -59,4 +59,4 @@ sysinfo.txt
 crashlytics-build.properties
 
 # This one pesky layout file
-/[Uu]serSettings/EditorUserSettings.asset
+UserSettings/EditorUserSettings.asset
