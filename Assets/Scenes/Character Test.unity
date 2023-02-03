@@ -415,5 +415,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene Essentials
       objectReference: {fileID: 0}
+    - target: {fileID: 8387642344191125547, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e248bf9237021a42922bb8844c53840, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
