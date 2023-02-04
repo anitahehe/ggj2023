@@ -110,24 +110,24 @@ public class PlayerStateController : MonoBehaviour
 		// get action maps & actions
 		actionMap = playerInput.currentActionMap;
 		moveAction = actionMap.FindAction("Move");
-		jumpAction = actionMap.FindAction("Jump");
-		dashAction = actionMap.FindAction("Dash");
+	    //jumpAction = actionMap.FindAction("Jump");
+		//dashAction = actionMap.FindAction("Dash");
 
 		// assign hashes
 		isMovingHash = Animator.StringToHash("isMoving");
 		movementHash = Animator.StringToHash("moveVelocity");
-		isJumpingHash = Animator.StringToHash("isJumping");
-		isDashingHash = Animator.StringToHash("isDashing");
-		jumpVelocityHash = Animator.StringToHash("yVelocity");
+		//isJumpingHash = Animator.StringToHash("isJumping");
+		//isDashingHash = Animator.StringToHash("isDashing");
+		//jumpVelocityHash = Animator.StringToHash("yVelocity");
 
 		// listen to input
 		moveAction.started += OnMovementInput;
 		moveAction.canceled += OnMovementInput;
 		moveAction.performed += OnMovementInput;
-		jumpAction.started += OnJumpInput;
-		jumpAction.canceled += OnJumpInput;
-		dashAction.started += OnDashInput;
-		dashAction.canceled += OnDashInput;
+		//jumpAction.started += OnJumpInput;
+		//jumpAction.canceled += OnJumpInput;
+		//dashAction.started += OnDashInput;
+		//dashAction.canceled += OnDashInput;
 
 		SetupJumpVariables();
 	}
