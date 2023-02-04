@@ -55,7 +55,6 @@ using UnityEngine;
         mushroom.transform.position = SkewerSpots[MushroomsSkewered.Count].transform.position;
         mushroom.transform.parent = SkewerSpots[MushroomsSkewered.Count].transform;
         MushroomsSkewered.Add(mushroom);
-        mushroom.GetComponent<SphereCollider>().enabled = false;
     }
     
     public void ToggleSkewer()
