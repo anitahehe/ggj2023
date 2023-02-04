@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterVolume: 1
-  ambienceVolume: 0.3
+  ambienceVolume: 0.2
+  musicVolume: 0.4
+  VFXVolume: 0.6
   player: {fileID: 7805457231592944444}
 --- !u!1 &1774612798
 GameObject:
@@ -99,6 +101,13 @@ MonoBehaviour:
       Data3: -736009580
       Data4: 1634410288
     Path: event:/Forest
+  <music>k__BackingField:
+    Guid:
+      Data1: -1033626066
+      Data2: 1307444179
+      Data3: -1234786151
+      Data4: 568612318
+    Path: event:/Music
 --- !u!1 &5361105541602788342
 GameObject:
   m_ObjectHideFlags: 0
