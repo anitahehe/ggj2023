@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1671,15 +1671,39 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
       value: dcf16e34-28a4-493c-bd66-a22929cb7998
       objectReference: {fileID: 0}
     - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: 92d81964-7173-43b5-b28b-aa9d0156a15e
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: b160e283-af3d-457c-95aa-b8dc2089a8bd
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
       value: Player/SkewerToggle[/Keyboard/f]
       objectReference: {fileID: 0}
     - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: Player/Jump[/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Player/Dash[/Keyboard/shift]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
@@ -1687,24 +1711,52 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1917257883}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1917257883}
     - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleSkewer
       objectReference: {fileID: 0}
     - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ToggleSkewer
       objectReference: {fileID: 0}
     - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Skewer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Skewer, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507491217802912660, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ShowDebugText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507491217802912660, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ShowCameraFrustum
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
