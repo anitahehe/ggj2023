@@ -9,9 +9,10 @@ public class GameManager : MonoBehaviour
     public List<GameObject> ProgressIndicators;
     public GameObject Player;
     [Header("Parameters")]
-    public static int NUM_GOAL_MUSHROOMS = 9;
+    public int TotalMushroomsNeededToWin = 9;
     public int mushroomsEaten = 0;
-    
+
+    public static GameManager instance;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Awake()
+    {
+        instance = this;
+    }
+    
     public void Start()
     {
         foreach (var indicator in ProgressIndicators)
@@ -35,11 +41,11 @@ public class GameManager : MonoBehaviour
         {
             ShowProgress(ProgressIndicators[0]);
         }
-        if (mushroomsEaten >= NUM_GOAL_MUSHROOMS / 2)
+        if (mushroomsEaten >= TotalMushroomsNeededToWin / 2)
         {
             ShowProgress(ProgressIndicators[1]);
         }
-        if (mushroomsEaten >= NUM_GOAL_MUSHROOMS)
+        if (mushroomsEaten >= TotalMushroomsNeededToWin)
         {
             EndGame();
         }
@@ -65,11 +71,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(Ascend()); // TEMPORARY FLIGHT INTO SKY
     }
 
-    void PunishPlayer(int penalty)
+    public void PunishPlayer(int penalty)
     {
         // Decrease the number of mushrooms!
         mushroomsEaten -= penalty;
-        if (mushroomsEaten < NUM_GOAL_MUSHROOMS / 2)
+        if (mushroomsEaten < TotalMushroomsNeededToWin / 2)
         {
             RemoveProgress(ProgressIndicators[1]);
         }

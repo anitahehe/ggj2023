@@ -76,9 +76,23 @@ public class CookingSpot : MonoBehaviour
 
     private void OnFeedingEnd()
     {
+        bool poisonedSkewer = false;
         foreach (GameObject mushroom in PlayerSkewer.MushroomsSkewered)
         {
-            // TODO: Check if poisinous and act accordingly, otherwise progress game.
+            // TODO: Check if poisonous and act accordingly, otherwise progress game.
+        }
+
+        if (poisonedSkewer)
+        {
+            GameManager.instance.PunishPlayer(PlayerSkewer.MushroomsSkewered.Count);
+        }
+        else
+        {
+            GameManager.instance.EatMushrooms(PlayerSkewer.MushroomsSkewered.Count);
+        }
+        
+        foreach (GameObject mushroom in PlayerSkewer.MushroomsSkewered)
+        {
             Destroy(mushroom);
         }
         PlayerSkewer.MushroomsSkewered.Clear();
