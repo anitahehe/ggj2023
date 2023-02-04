@@ -47,11 +47,14 @@ public class BurningSlug : MonoBehaviour
 
     IEnumerator BurningTimer()
     {
-        while (true)
+        float elapsed = 0;
+
+        while (elapsed < burnTimer)
         {
-            yield return new WaitForSeconds(burnTimer);
-            OnBurningEnd();
+            yield return null;
+            elapsed += Time.deltaTime;
         }
+        OnBurningEnd();
     }
 
     private void OnTriggerEnter(Collider other)

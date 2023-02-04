@@ -14609,7 +14609,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4740626447791174105}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.52, y: 2.04, z: -0.15999985}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
@@ -19417,7 +19417,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.4
+  m_Radius: 0.45
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.2, z: 0}
@@ -19437,7 +19437,7 @@ MonoBehaviour:
   slug: {fileID: 0}
   slugMesh: {fileID: 0}
   charredSlug: {fileID: 2100000, guid: 85be61c9684dc7c41908904714d72f7d, type: 2}
-  fireOffset: {x: 0, y: 0, z: 0}
+  fireOffset: {x: 0, y: -1, z: -1}
   burnTimer: 5
 --- !u!1 &4740626448170682390
 GameObject:
