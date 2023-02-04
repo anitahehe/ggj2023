@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,7 @@ public class CookingSpot : MonoBehaviour
     public List<GameObject> mushroomObjects;
     public Material cookedMushroom;
     public Skewer PlayerSkewer;
+    public CinemachineVirtualCamera CookingCamera;
     
     [Header("Parameters")]
     public Vector3 fireOffset;
@@ -44,7 +46,8 @@ public class CookingSpot : MonoBehaviour
     {
         Debug.Log("start cooking");
         PlayerInput.all[0].currentActionMap.Disable();
-
+        CookingCamera.Priority = 20;
+        
         _isCooking = true;
         foreach (var fire in fireObjects)
         {
@@ -83,7 +86,8 @@ public class CookingSpot : MonoBehaviour
         }
         PlayerSkewer.MushroomsSkewered.Clear();
         PlayerInput.all[0].currentActionMap.Enable();
-        // TODO: Return camera position.
+        CookingCamera.Priority = 0;
+
     }
     
     IEnumerator BurningTimer()
@@ -95,13 +99,17 @@ public class CookingSpot : MonoBehaviour
     IEnumerator AcceptanceTimer()
     {
         //TODO: add screenshake and stuff
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         OnFeedingEnd();
     }
 
     void OnTriggerEnter(Collider other)
     {
         PlayerSkewer = other.transform.parent.parent.gameObject.GetComponent<Skewer>();
+        if (other.gameObject.name.Contains("Player"))
+        {
+            return;
+        }
         if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer && (PlayerSkewer.MushroomsSkewered.Count == 3))
         {
             foreach (GameObject skeweredMushroom in PlayerSkewer.MushroomsSkewered)
