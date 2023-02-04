@@ -23,6 +23,8 @@ public class FModEvents : MonoBehaviour
     #endregion
 
     [field: SerializeField] public EventReference ambience { get; private set; }
+    [field: SerializeField] public EventReference music { get; private set; }
+    [field: SerializeField] public EventReference burningCampfire { get; private set; }
 
     // Start is called before the first frame update
     void Start()
