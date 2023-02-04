@@ -386,7 +386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1947460509
 Transform:
   m_ObjectHideFlags: 0
@@ -686,8 +686,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 1
+  m_Radius: 0.21
+  m_Height: 0.7
   m_Direction: 1
   m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!4 &2048734412332527897
@@ -698,7 +698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048734412332527901}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.52, y: 1.6741, z: -0.18}
+  m_LocalPosition: {x: 11.52, y: 1.6741, z: -12.52}
   m_LocalScale: {x: 9.6594, y: 9.6594, z: 9.6594}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -763,8 +763,11 @@ MonoBehaviour:
   - {fileID: 0}
   mushroomObjects: []
   cookedMushroom: {fileID: 2100000, guid: 85be61c9684dc7c41908904714d72f7d, type: 2}
+  PlayerSkewer: {fileID: 0}
   fireOffset: {x: 0, y: 0, z: 0}
   cookTimer: 5
+  cookTimeRangeLower: 1
+  cookTimeRangeUpper: 5
 --- !u!1001 &4006774393542860813
 PrefabInstance:
   m_ObjectHideFlags: 0
