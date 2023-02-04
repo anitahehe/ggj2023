@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +13,9 @@ public class CookingSpot : MonoBehaviour
     public List<GameObject> mushroomObjects;
     public Material cookedMushroom;
     public Skewer PlayerSkewer;
-    
+    public CinemachineVirtualCamera CookingCamera;
+    public CinemachineImpulseSource ImpulseSource;
+
     [Header("Parameters")]
     public Vector3 fireOffset;
     public float cookTimer = 5.0f;
@@ -19,8 +24,12 @@ public class CookingSpot : MonoBehaviour
 
     bool _isCooking = false;
     bool _isFeeding = false;
-    
 
+
+    void Awake()
+    {
+        ImpulseSource = GetComponent<CinemachineImpulseSource>();
+    }
     void Start()
     {
         foreach (var fire in fireObjects)
@@ -39,12 +48,17 @@ public class CookingSpot : MonoBehaviour
             }
         }
     }
+    void ScreenShake()
+    {
+        ImpulseSource.GenerateImpulse();
+    }
 
     void StartCooking()
     {
         Debug.Log("start cooking");
         PlayerInput.all[0].currentActionMap.Disable();
-
+        CookingCamera.Priority = 20;
+        
         _isCooking = true;
         foreach (var fire in fireObjects)
         {
@@ -76,14 +90,29 @@ public class CookingSpot : MonoBehaviour
 
     private void OnFeedingEnd()
     {
+        bool poisonedSkewer = false;
         foreach (GameObject mushroom in PlayerSkewer.MushroomsSkewered)
         {
-            // TODO: Check if poisinous and act accordingly, otherwise progress game.
+            // TODO: Check if poisonous and act accordingly, otherwise progress game.
+        }
+
+        if (poisonedSkewer)
+        {
+            GameManager.instance.PunishPlayer(PlayerSkewer.MushroomsSkewered.Count);
+        }
+        else
+        {
+            GameManager.instance.EatMushrooms(PlayerSkewer.MushroomsSkewered.Count);
+        }
+        
+        foreach (GameObject mushroom in PlayerSkewer.MushroomsSkewered)
+        {
             Destroy(mushroom);
         }
         PlayerSkewer.MushroomsSkewered.Clear();
         PlayerInput.all[0].currentActionMap.Enable();
-        // TODO: Return camera position.
+        CookingCamera.Priority = 0;
+
     }
     
     IEnumerator BurningTimer()
@@ -94,17 +123,21 @@ public class CookingSpot : MonoBehaviour
     
     IEnumerator AcceptanceTimer()
     {
-        //TODO: add screenshake and stuff
-        yield return new WaitForSeconds(2f);
+        ScreenShake();
+        yield return new WaitForSeconds(5f);
         OnFeedingEnd();
     }
 
     void OnTriggerEnter(Collider other)
     {
         PlayerSkewer = other.transform.parent.parent.gameObject.GetComponent<Skewer>();
-        if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer)
+        if (other.gameObject.name.Contains("Player"))
         {
-            foreach (GameObject skeweredMushroom in FindObjectOfType<Skewer>().MushroomsSkewered)
+            return;
+        }
+        if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer && (PlayerSkewer.MushroomsSkewered.Count == 3))
+        {
+            foreach (GameObject skeweredMushroom in PlayerSkewer.MushroomsSkewered)
             {
                 mushroomObjects.Add(skeweredMushroom);
             }

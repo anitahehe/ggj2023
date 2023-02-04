@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{484102ca-d5e0-45c9-bb2b-cb11b2d83c13}">
+		<property name="assetPath">
+			<value>Roasting.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>222.79606250000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9e40d699-c030-4ffe-9769-e753968eef36}</destination>
+		</relationship>
+	</object>
+</objects>

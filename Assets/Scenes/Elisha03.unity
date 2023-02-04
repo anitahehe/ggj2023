@@ -162,6 +162,7 @@ MonoBehaviour:
   - {fileID: 1205761157}
   - {fileID: 1381504345}
   - {fileID: 1550739631}
+  Player: {fileID: 1233877779}
 --- !u!4 &750943966
 Transform:
   m_ObjectHideFlags: 0
@@ -331,6 +332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13065f768bb6ed749a8224de987be2c8, type: 3}
+--- !u!1 &1233877779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7805457231592944444, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+  m_PrefabInstance: {fileID: 5361105541468571271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1381504345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,8 +1109,11 @@ MonoBehaviour:
   - {fileID: 0}
   mushroomObjects: []
   cookedMushroom: {fileID: 2100000, guid: 85be61c9684dc7c41908904714d72f7d, type: 2}
+  PlayerSkewer: {fileID: 0}
   fireOffset: {x: 0, y: 0, z: 0}
   cookTimer: 5
+  cookTimeRangeLower: 1
+  cookTimeRangeUpper: 5
 --- !u!1001 &4006774393542860813
 PrefabInstance:
   m_ObjectHideFlags: 0
