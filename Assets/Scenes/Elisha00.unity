@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1940,6 +1940,7 @@ MonoBehaviour:
   - {fileID: 166148727}
   - {fileID: 938682940}
   - {fileID: 1237147086}
+  <GatherSkewer>k__BackingField: 0
 --- !u!135 &1917257884
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2270,6 +2271,46 @@ PrefabInstance:
     - target: {fileID: 5361105541602788342, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
       propertyPath: m_Name
       value: Scene Essentials
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: dcf16e34-28a4-493c-bd66-a22929cb7998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Player/SkewerToggle[/Keyboard/f]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1917257883}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleSkewer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Skewer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
