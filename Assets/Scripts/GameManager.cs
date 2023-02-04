@@ -5,9 +5,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Asset References")]
+    public List<GameObject> ProgressIndicators;
+    public GameObject Player;
+    [Header("Parameters")]
     public static int NUM_GOAL_MUSHROOMS = 9;
     public int mushroomsEaten = 0;
-    public List<GameObject> ProgressIndicators;
+    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            EatMushrooms(3);
+        }
+    }
 
     public void Start()
     {
@@ -51,6 +62,7 @@ public class GameManager : MonoBehaviour
     {
         ShowProgress(ProgressIndicators[2]);
         // TODO: Start ending!
+        StartCoroutine(Ascend()); // TEMPORARY FLIGHT INTO SKY
     }
 
     void PunishPlayer(int penalty)
@@ -66,6 +78,15 @@ public class GameManager : MonoBehaviour
         {
             mushroomsEaten = 0;
             RemoveProgress(ProgressIndicators[0]);
+        }
+    }
+
+    IEnumerator Ascend()
+    {
+        while (true)
+        {
+            Player.transform.position += Vector3.up;
+            yield return true;
         }
     }
 }
