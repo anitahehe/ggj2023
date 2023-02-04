@@ -7,7 +7,7 @@ using UnityEngine;
     public GameObject ForagableMushroom;
     public List<GameObject> SkewerSpots;
     [field: SerializeField] public bool GatherSkewer { get; private set; }
-    private HashSet<GameObject> MushroomsSkewered;
+    public HashSet<GameObject> MushroomsSkewered;
     void Start()
     {
         MushroomsSkewered = new HashSet<GameObject>();
@@ -48,7 +48,7 @@ using UnityEngine;
 
     void TryCollectMushroom()
     {
-        if (ForagableMushroom is null || MushroomsSkewered.Count >= SkewerSpots.Count)
+        if (ForagableMushroom is null || MushroomsSkewered.Count >= SkewerSpots.Count || MushroomsSkewered.Contains(ForagableMushroom))
             return;
         GameObject mushroom = ForagableMushroom;
         ForagableMushroom = null;

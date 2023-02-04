@@ -30,7 +30,6 @@ public class CookingSpot : MonoBehaviour
             for (int i = 0; i < mushroomObjects.Count; i++)
             {
                 fireObjects[i].transform.position = mushroomObjects[i].transform.position + fireOffset;
-                fireObjects[i].transform.parent = mushroomObjects[i].transform;
             }
         }
     }
@@ -60,6 +59,8 @@ public class CookingSpot : MonoBehaviour
                 meshRenderer.material = cookedMushroom;
             }
         }
+        
+        mushroomObjects.Clear();
     }
 
     IEnumerator BurningTimer()
@@ -75,7 +76,10 @@ public class CookingSpot : MonoBehaviour
     {
         if (other.CompareTag("Mushroom") && !_isCooking)
         {
-            mushroomObjects.Add(other.gameObject);
+            foreach (GameObject skeweredMushroom in FindObjectOfType<Skewer>().MushroomsSkewered)
+            {
+                mushroomObjects.Add(skeweredMushroom);
+            }
             StartCooking();
         }
     }
