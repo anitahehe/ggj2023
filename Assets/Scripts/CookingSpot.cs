@@ -58,6 +58,7 @@ public class CookingSpot : MonoBehaviour
             {
                 meshRenderer.material = cookedMushroom;
             }
+            mushroom.GetComponentInChildren<Mushroom>().Cooked = true;
         }
         
         mushroomObjects.Clear();

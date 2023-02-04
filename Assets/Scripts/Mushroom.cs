@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class Mushroom : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other) {
-    }
+    public bool Cooked = false;
 }
