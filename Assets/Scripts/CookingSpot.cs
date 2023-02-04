@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,7 +14,8 @@ public class CookingSpot : MonoBehaviour
     public Material cookedMushroom;
     public Skewer PlayerSkewer;
     public CinemachineVirtualCamera CookingCamera;
-    
+    public CinemachineImpulseSource ImpulseSource;
+
     [Header("Parameters")]
     public Vector3 fireOffset;
     public float cookTimer = 5.0f;
@@ -21,8 +24,12 @@ public class CookingSpot : MonoBehaviour
 
     bool _isCooking = false;
     bool _isFeeding = false;
-    
 
+
+    void Awake()
+    {
+        ImpulseSource = GetComponent<CinemachineImpulseSource>();
+    }
     void Start()
     {
         foreach (var fire in fireObjects)
@@ -40,6 +47,10 @@ public class CookingSpot : MonoBehaviour
                 fireObjects[i].transform.position = mushroomObjects[i].transform.position + fireOffset;
             }
         }
+    }
+    void ScreenShake()
+    {
+        ImpulseSource.GenerateImpulse();
     }
 
     void StartCooking()
@@ -112,7 +123,7 @@ public class CookingSpot : MonoBehaviour
     
     IEnumerator AcceptanceTimer()
     {
-        //TODO: add screenshake and stuff
+        ScreenShake();
         yield return new WaitForSeconds(5f);
         OnFeedingEnd();
     }
