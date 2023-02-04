@@ -63,11 +63,11 @@ using UnityEngine;
 
         if (GatherSkewer)
         {
-            transform.Rotate(0,0,35f);
+            transform.Rotate(0,0,45f);
         }
         else
         {
-            transform.Rotate(0,0,-35f);
+            transform.Rotate(0,0,-45f);
         }
     }
 }

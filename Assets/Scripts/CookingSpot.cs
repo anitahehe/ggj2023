@@ -102,9 +102,9 @@ public class CookingSpot : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         PlayerSkewer = other.transform.parent.parent.gameObject.GetComponent<Skewer>();
-        if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer)
+        if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer && (PlayerSkewer.MushroomsSkewered.Count == 3))
         {
-            foreach (GameObject skeweredMushroom in FindObjectOfType<Skewer>().MushroomsSkewered)
+            foreach (GameObject skeweredMushroom in PlayerSkewer.MushroomsSkewered)
             {
                 mushroomObjects.Add(skeweredMushroom);
             }
