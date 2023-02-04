@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 482205297}
-  m_IndirectSpecularColor: {r: 0.0041419016, g: 0.0038594934, b: 0.017157173, a: 1}
+  m_IndirectSpecularColor: {r: 0.004152011, g: 0.0038614953, b: 0.01718004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5094,6 +5094,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.14088795
       objectReference: {fileID: 0}
+    - target: {fileID: 1795523869, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 495072134}
     - target: {fileID: 7946423207451042865, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
       propertyPath: m_Name
       value: CookingSpot
@@ -6969,6 +6973,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32bb7d8eaaf2c9e4cb4e45f0c42fb24e, type: 3}
+--- !u!114 &898809566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8664448124916830376, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+  m_PrefabInstance: {fileID: 1625749899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc563792abe0ceb47b728bdf0f2ac994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &903219774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2225471985321636956, guid: 8675a68ceb6c1e048a68267417757d73, type: 3}
@@ -11195,6 +11210,34 @@ PrefabInstance:
     - target: {fileID: 5361105541602788342, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
       propertyPath: m_Name
       value: Scene Essentials
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 898809566}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleSkewer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Skewer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}

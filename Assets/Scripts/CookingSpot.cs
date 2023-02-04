@@ -123,7 +123,7 @@ public class CookingSpot : MonoBehaviour
     
     IEnumerator AcceptanceTimer()
     {
-        ScreenShake();
+        //ScreenShake();
         yield return new WaitForSeconds(5f);
         OnFeedingEnd();
     }
