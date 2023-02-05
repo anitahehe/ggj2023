@@ -21,7 +21,10 @@ public class Booklet : MonoBehaviour
     {
         //Set status of whether the book is opened based on the animator status
         if (bookAnimator.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
+        {
             bookIsOpen = false;
+            GameManager.instance.Player.SetActive(true);
+        }
         if (bookAnimator.GetCurrentAnimatorStateInfo(0).IsName("Selected"))
             bookIsOpen = true;
 
@@ -47,7 +50,10 @@ public class Booklet : MonoBehaviour
         if (bookIsOpen == false)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
+            {
                 EventSystem.current.SetSelectedGameObject(bookObject);
+                GameManager.instance.Player.SetActive(false);
+            }
 
             Camera.main.GetComponent<Cinemachine.CinemachineBrain>().enabled = true;
         }
