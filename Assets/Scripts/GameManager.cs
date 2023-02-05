@@ -2,15 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Asset References")]
     public List<GameObject> ProgressIndicators;
     public GameObject Player;
+    public GameObject GameEndingFadeToWhite;
+    
     [Header("Parameters")]
     public int TotalMushroomsNeededToWin = 9;
     public int mushroomsEaten = 0;
+    public bool GameIsEnding = false;
+    public float GameEndingTransitionLength = 5.0f;
+    
 
     public static GameManager instance;
     void Update()
@@ -66,9 +73,10 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
+        GameIsEnding = true;
         ShowProgress(ProgressIndicators[2]);
         // TODO: Start ending!
-        StartCoroutine(Ascend()); // TEMPORARY FLIGHT INTO SKY
+        StartCoroutine(Ascend());
     }
 
     public void PunishPlayer(int penalty)
@@ -89,10 +97,12 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Ascend()
     {
-        while (true)
+        Image img =  GameEndingFadeToWhite.GetComponent<Image>();
+        for (float i = 0; i <= GameEndingTransitionLength; i += Time.deltaTime)
         {
-            Player.transform.position += Vector3.up;
-            yield return true;
+            img.color = new Color(1, 1, 1, i / GameEndingTransitionLength);
+            yield return null;
         }
+        SceneManager.LoadScene("EndingScene");
     }
 }
