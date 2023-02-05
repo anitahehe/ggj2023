@@ -92,20 +92,19 @@ public class CookingSpot : MonoBehaviour
 
     private void OnFeedingEnd()
     {
-        bool poisonedSkewer = false;
+        int poisonedSkewer = 0;
         foreach (GameObject mushroom in PlayerSkewer.MushroomsSkewered)
         {
             // TODO: Check if poisonous and act accordingly, otherwise progress game.
             if (mushroom.GetComponent<Mushroom>().Poisinous)
             {
-                poisonedSkewer = true;
-                break;
+                poisonedSkewer++;
             }
         }
 
-        if (poisonedSkewer)
+        if (poisonedSkewer > 0)
         {
-            GameManager.instance.PunishPlayer(PlayerSkewer.MushroomsSkewered.Count);
+            GameManager.instance.PunishPlayer(poisonedSkewer);
         }
         else
         {
@@ -147,7 +146,7 @@ public class CookingSpot : MonoBehaviour
         {
             return;
         }
-        if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer && (PlayerSkewer.MushroomsSkewered.Count == 3))
+        if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer)
         {
             foreach (GameObject skeweredMushroom in PlayerSkewer.MushroomsSkewered)
             {
