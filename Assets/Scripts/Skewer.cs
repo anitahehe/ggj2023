@@ -71,4 +71,13 @@ using UnityEngine;
             transform.Rotate(0,0,-45f);
         }
     }
+
+    public void ClearSkewer()
+    {
+        foreach (GameObject mushroom in MushroomsSkewered)
+        {
+            MushroomsSkewered.Remove(mushroom);
+            Destroy(mushroom);
+        }
+    }
 }

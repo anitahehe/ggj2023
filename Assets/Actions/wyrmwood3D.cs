@@ -71,6 +71,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ClearSkewer"",
+                    ""type"": ""Button"",
+                    ""id"": ""3921c501-93e3-4888-9969-182e320b8ea6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -302,6 +311,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""SkewerToggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0004ff0e-cfba-49b9-a399-ed6857b8b9b0"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClearSkewer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0386db41-1d49-498a-a4a7-0e9f6dc6fded"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClearSkewer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -894,6 +925,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_SkewerToggle = m_Player.FindAction("SkewerToggle", throwIfNotFound: true);
+        m_Player_ClearSkewer = m_Player.FindAction("ClearSkewer", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -970,6 +1002,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_SkewerToggle;
+    private readonly InputAction m_Player_ClearSkewer;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -979,6 +1012,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @SkewerToggle => m_Wrapper.m_Player_SkewerToggle;
+        public InputAction @ClearSkewer => m_Wrapper.m_Player_ClearSkewer;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1003,6 +1037,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @SkewerToggle.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkewerToggle;
                 @SkewerToggle.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkewerToggle;
                 @SkewerToggle.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkewerToggle;
+                @ClearSkewer.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClearSkewer;
+                @ClearSkewer.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClearSkewer;
+                @ClearSkewer.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClearSkewer;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1022,6 +1059,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @SkewerToggle.started += instance.OnSkewerToggle;
                 @SkewerToggle.performed += instance.OnSkewerToggle;
                 @SkewerToggle.canceled += instance.OnSkewerToggle;
+                @ClearSkewer.started += instance.OnClearSkewer;
+                @ClearSkewer.performed += instance.OnClearSkewer;
+                @ClearSkewer.canceled += instance.OnClearSkewer;
             }
         }
     }
@@ -1183,6 +1223,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnSkewerToggle(InputAction.CallbackContext context);
+        void OnClearSkewer(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
