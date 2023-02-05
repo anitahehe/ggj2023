@@ -73,6 +73,7 @@ namespace UnityTemplateProjects
 
         [Tooltip("Whether or not to invert our Y axis for mouse input to rotation.")]
         public bool invertY = false;
+        public bool invertX = false;
 
 #if ENABLE_INPUT_SYSTEM
         InputAction movementAction;
@@ -85,6 +86,7 @@ namespace UnityTemplateProjects
         {
             var map = new InputActionMap("Simple Camera Controller");
 
+            
             lookAction = map.AddAction("look", binding: "<Mouse>/delta");
             movementAction = map.AddAction("move", binding: "<Gamepad>/leftStick");
             verticalMovementAction = map.AddAction("Vertical Movement");
@@ -163,6 +165,8 @@ namespace UnityTemplateProjects
         void Update()
         {
             // Exit Sample
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
 
             if (IsEscapePressed())
             {
@@ -181,8 +185,8 @@ namespace UnityTemplateProjects
             // Unlock and show cursor when right mouse button released
             if (IsRightMouseButtonUp())
             {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+               // Cursor.visible = true;
+                //Cursor.lockState = CursorLockMode.None;
             }
 
             // Rotation
@@ -191,6 +195,8 @@ namespace UnityTemplateProjects
                 var mouseMovement = GetInputLookRotation() * Time.deltaTime * 5;
                 if (invertY)
                     mouseMovement.y = -mouseMovement.y;
+                if (invertX)
+                    mouseMovement.x = -mouseMovement.x;
 
                 var mouseSensitivityFactor = mouseSensitivityCurve.Evaluate(mouseMovement.magnitude);
 

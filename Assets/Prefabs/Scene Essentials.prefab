@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterVolume: 1
   ambienceVolume: 0.2
-  musicVolume: 0.4
+  musicVolume: 0.3
   SFXVolume: 0.6
   player: {fileID: 7805457231592944444}
   campfires:
@@ -57,11 +57,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   torches:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -102,13 +97,6 @@ MonoBehaviour:
       Data3: 2049705147
       Data4: -1570553960
     Path: event:/Campfire
-  <buttonClick>k__BackingField:
-    Guid:
-      Data1: 1199168098
-      Data2: 1208481757
-      Data3: 687198885
-      Data4: 2015097227
-    Path: event:/ButtonClick
   <pickup>k__BackingField:
     Guid:
       Data1: -598316296
@@ -165,6 +153,13 @@ MonoBehaviour:
       Data3: -1641835595
       Data4: 843504597
     Path: event:/MovementWater
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: 1199168098
+      Data2: 1208481757
+      Data3: 687198885
+      Data4: 2015097227
+    Path: event:/ButtonClick
 --- !u!1 &5361105541602788342
 GameObject:
   m_ObjectHideFlags: 0

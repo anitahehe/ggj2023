@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("Asset References")]
     public List<GameObject> ProgressIndicators;
     public GameObject Player;
+    public GameObject HomePoint;
     public GameObject GameEndingFadeToWhite;
     
     [Header("Parameters")]

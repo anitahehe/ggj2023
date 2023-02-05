@@ -80,6 +80,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TeleportHome"",
+                    ""type"": ""Button"",
+                    ""id"": ""edb5d1fc-7be0-406c-9eb2-e79f228e003f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -333,6 +342,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ClearSkewer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3434131e-30ed-4d9d-b5bd-6796dcc209dd"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TeleportHome"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be70071b-bc4f-4cfb-8d11-51c550265e0c"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TeleportHome"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -926,6 +957,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_SkewerToggle = m_Player.FindAction("SkewerToggle", throwIfNotFound: true);
         m_Player_ClearSkewer = m_Player.FindAction("ClearSkewer", throwIfNotFound: true);
+        m_Player_TeleportHome = m_Player.FindAction("TeleportHome", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1003,6 +1035,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_SkewerToggle;
     private readonly InputAction m_Player_ClearSkewer;
+    private readonly InputAction m_Player_TeleportHome;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -1013,6 +1046,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @SkewerToggle => m_Wrapper.m_Player_SkewerToggle;
         public InputAction @ClearSkewer => m_Wrapper.m_Player_ClearSkewer;
+        public InputAction @TeleportHome => m_Wrapper.m_Player_TeleportHome;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1040,6 +1074,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @ClearSkewer.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClearSkewer;
                 @ClearSkewer.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClearSkewer;
                 @ClearSkewer.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClearSkewer;
+                @TeleportHome.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTeleportHome;
+                @TeleportHome.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTeleportHome;
+                @TeleportHome.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTeleportHome;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1062,6 +1099,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @ClearSkewer.started += instance.OnClearSkewer;
                 @ClearSkewer.performed += instance.OnClearSkewer;
                 @ClearSkewer.canceled += instance.OnClearSkewer;
+                @TeleportHome.started += instance.OnTeleportHome;
+                @TeleportHome.performed += instance.OnTeleportHome;
+                @TeleportHome.canceled += instance.OnTeleportHome;
             }
         }
     }
@@ -1224,6 +1264,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnSkewerToggle(InputAction.CallbackContext context);
         void OnClearSkewer(InputAction.CallbackContext context);
+        void OnTeleportHome(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

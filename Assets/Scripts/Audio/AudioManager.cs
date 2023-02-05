@@ -13,7 +13,8 @@ public class AudioManager : MonoBehaviour
     {
         if (_instance != null && _instance != this)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            _instance = this;
         }
         else
         {
@@ -38,7 +39,7 @@ public class AudioManager : MonoBehaviour
     public List<GameObject> campfires = new List<GameObject>();
     public List<GameObject> torches = new List<GameObject>();
 
-    List<EventInstance> sfxEventInstances;
+    List<EventInstance> sfxEventInstances = new List<EventInstance>();
 
     private EventInstance ambienceEventInstance;
     private EventInstance musicEventInstance;
@@ -52,8 +53,6 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sfxEventInstances = new List<EventInstance>();
-
         InitEventInstances();
     }
 
@@ -178,7 +177,7 @@ public class AudioManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        ambienceEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        //ambienceEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         moveLandEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         moveWaterEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);

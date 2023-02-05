@@ -12,7 +12,8 @@ public class FModEvents : MonoBehaviour
     {
         if (_instance != null && _instance != this)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            _instance = this;
         }
         else
         {
@@ -25,7 +26,6 @@ public class FModEvents : MonoBehaviour
     [field: SerializeField] public EventReference ambience { get; private set; }
     [field: SerializeField] public EventReference music { get; private set; }
     [field: SerializeField] public EventReference burningCampfire { get; private set; }
-    [field: SerializeField] public EventReference buttonClick { get; private set; }
     [field: SerializeField] public EventReference pickup { get; private set; }
     [field: SerializeField] public EventReference mushroomRoast { get; private set; }
     [field: SerializeField] public EventReference waterEnter { get; private set; }
@@ -34,4 +34,6 @@ public class FModEvents : MonoBehaviour
     [field: SerializeField] public EventReference Chewing { get; private set; }
     [field: SerializeField] public EventReference MoveLand { get; private set; }
     [field: SerializeField] public EventReference MoveWater { get; private set; }
+    [field: SerializeField] public EventReference buttonClick { get; private set; }
+
 }
