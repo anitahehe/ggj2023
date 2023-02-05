@@ -18,7 +18,7 @@ public class BoneToGround : MonoBehaviour
         {
             lastPointHit = hit.point;
            groundTarget.transform.position = new Vector3(groundTarget.transform.position.x, hit.point.y, groundTarget.transform.position.z);
-            Debug.Log("hit" + hit.collider.gameObject.name) ;
+           //Debug.Log("hit" + hit.collider.gameObject.name) ;
         }
 
         Debug.DrawLine(transform.position, lastPointHit, Color.magenta);

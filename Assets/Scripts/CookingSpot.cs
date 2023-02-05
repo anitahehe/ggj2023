@@ -104,6 +104,7 @@ public class CookingSpot : MonoBehaviour
 
         if (poisonedSkewer > 0)
         {
+            ScreenShake();
             GameManager.instance.PunishPlayer(3);
         }
         else
@@ -117,12 +118,7 @@ public class CookingSpot : MonoBehaviour
         }
         PlayerSkewer.MushroomsSkewered.Clear();
 
-        if (!GameManager.instance.GameIsEnding)
-        {
-            PlayerInput.all[0].currentActionMap.Enable();
-            CookingCamera.Priority = 0;
-        }
-        
+        StartCoroutine(FinishFoodTimer());
 
     }
     
@@ -134,9 +130,19 @@ public class CookingSpot : MonoBehaviour
     
     IEnumerator AcceptanceTimer()
     {
-        //ScreenShake();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         OnFeedingEnd();
+    }
+    
+    IEnumerator FinishFoodTimer()
+    {
+        yield return new WaitForSeconds(3f);
+        
+        if (!GameManager.instance.GameIsEnding)
+        {
+            PlayerInput.all[0].currentActionMap.Enable();
+            CookingCamera.Priority = 0;
+        }
     }
 
     void OnTriggerEnter(Collider other)

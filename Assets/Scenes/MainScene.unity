@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 482205297}
-  m_IndirectSpecularColor: {r: 0.0041419016, g: 0.0038594934, b: 0.017157173, a: 1}
+  m_IndirectSpecularColor: {r: 0.004152011, g: 0.0038614953, b: 0.01718004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -667,7 +667,6 @@ MonoBehaviour:
   Player: {fileID: 994865812}
   HomePoint: {fileID: 1042432559}
   GameEndingFadeToWhite: {fileID: 210406148}
-  TotalMushroomsNeededToWin: 9
   mushroomsEaten: 0
   GameIsEnding: 0
   GameEndingTransitionLength: 5
@@ -2171,6 +2170,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851154651662967127, guid: b4f9e27016123374b9fb6ee9c71c4f3f, type: 3}
   m_PrefabInstance: {fileID: 1664560127}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &83822314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1795523867, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
+  m_PrefabInstance: {fileID: 690301028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &83822317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83822314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ApplyAfter: 2
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 0
+  m_UseCameraSpace: 1
+  m_ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &84511910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19854,19 +19881,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1795523868, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9876841
+      value: 0.9851789
       objectReference: {fileID: 0}
     - target: {fileID: 1795523868, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.102458365
+      value: -0.11722403
       objectReference: {fileID: 0}
     - target: {fileID: 1795523868, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.117616594
+      value: -0.12434726
       objectReference: {fileID: 0}
     - target: {fileID: 1795523868, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.012201073
+      value: -0.014795777
       objectReference: {fileID: 0}
     - target: {fileID: 1795523869, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
       propertyPath: m_LookAt
@@ -48677,6 +48704,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7331787228789710375, guid: 13065f768bb6ed749a8224de987be2c8, type: 3}
   m_PrefabInstance: {fileID: 1833965436}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1834382092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7946423207451042865, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
+  m_PrefabInstance: {fileID: 690301028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1834382099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834382092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 4
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: -1, y: -1, z: 0}
 --- !u!1001 &1836241809
 PrefabInstance:
   m_ObjectHideFlags: 0
