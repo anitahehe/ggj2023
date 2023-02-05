@@ -104,11 +104,11 @@ public class CookingSpot : MonoBehaviour
 
         if (poisonedSkewer > 0)
         {
-            GameManager.instance.PunishPlayer(poisonedSkewer);
+            GameManager.instance.PunishPlayer(3);
         }
         else
         {
-            GameManager.instance.EatMushrooms(PlayerSkewer.MushroomsSkewered.Count);
+            GameManager.instance.EatMushrooms(3);
         }
         
         foreach (GameObject mushroom in PlayerSkewer.MushroomsSkewered)

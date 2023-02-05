@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public GameObject GameEndingFadeToWhite;
     
     [Header("Parameters")]
-    public int TotalMushroomsNeededToWin = 9;
     public int mushroomsEaten = 0;
     public bool GameIsEnding = false;
     public float GameEndingTransitionLength = 5.0f;
@@ -49,11 +48,11 @@ public class GameManager : MonoBehaviour
         {
             ShowProgress(ProgressIndicators[0]);
         }
-        if (mushroomsEaten >= TotalMushroomsNeededToWin / 2)
+        if (mushroomsEaten >= 4)
         {
             ShowProgress(ProgressIndicators[1]);
         }
-        if (mushroomsEaten >= TotalMushroomsNeededToWin)
+        if (mushroomsEaten >= 9)
         {
             EndGame();
         }
@@ -84,7 +83,7 @@ public class GameManager : MonoBehaviour
     {
         // Decrease the number of mushrooms!
         mushroomsEaten -= penalty;
-        if (mushroomsEaten < TotalMushroomsNeededToWin / 2)
+        if (mushroomsEaten <= 4)
         {
             RemoveProgress(ProgressIndicators[1]);
         }
