@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 985675840455631647}
   - component: {fileID: 985675840455631646}
+  - component: {fileID: 762198627}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -46,8 +47,109 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterVolume: 1
-  ambienceVolume: 0.3
+  ambienceVolume: 0.2
+  musicVolume: 0
+  SFXVolume: 0.6
   player: {fileID: 0}
+  campfires:
+  - {fileID: 0}
+  torches: []
+--- !u!114 &762198627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985675840455631641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc80940ed9cf7141b82fd8f3bee421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ambience>k__BackingField:
+    Guid:
+      Data1: 1026102311
+      Data2: 1204448236
+      Data3: -736009580
+      Data4: 1634410288
+    Path: event:/Forest
+  <music>k__BackingField:
+    Guid:
+      Data1: -1033626066
+      Data2: 1307444179
+      Data3: -1234786151
+      Data4: 568612318
+    Path: event:/Music
+  <burningCampfire>k__BackingField:
+    Guid:
+      Data1: 2137027616
+      Data2: 1178893058
+      Data3: 2049705147
+      Data4: -1570553960
+    Path: event:/Campfire
+  <pickup>k__BackingField:
+    Guid:
+      Data1: -598316296
+      Data2: 1093464590
+      Data3: 1868742579
+      Data4: -395052649
+    Path: event:/Pickup
+  <mushroomRoast>k__BackingField:
+    Guid:
+      Data1: 854807815
+      Data2: 1091545326
+      Data3: 1765083029
+      Data4: 66479904
+    Path: event:/Roasting
+  <waterEnter>k__BackingField:
+    Guid:
+      Data1: 1422370653
+      Data2: 1190887811
+      Data3: 1650316686
+      Data4: 1145015044
+    Path: event:/WaterEnter
+  <torch>k__BackingField:
+    Guid:
+      Data1: -930505502
+      Data2: 1304875956
+      Data3: -51538788
+      Data4: 2099890160
+    Path: event:/Torch
+  <pageFlip>k__BackingField:
+    Guid:
+      Data1: -495829907
+      Data2: 1306747513
+      Data3: -769486167
+      Data4: -1082010920
+    Path: event:/Flip
+  <Chewing>k__BackingField:
+    Guid:
+      Data1: 653208155
+      Data2: 1186688922
+      Data3: 893859970
+      Data4: -1269590341
+    Path: event:/Chewing
+  <MoveLand>k__BackingField:
+    Guid:
+      Data1: -1318664167
+      Data2: 1316195849
+      Data3: 988863873
+      Data4: -201629775
+    Path: event:/Movement
+  <MoveWater>k__BackingField:
+    Guid:
+      Data1: -1956582300
+      Data2: 1075765056
+      Data3: -1641835595
+      Data4: 843504597
+    Path: event:/MovementWater
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: 1199168098
+      Data2: 1208481757
+      Data3: 687198885
+      Data4: 2015097227
+    Path: event:/ButtonClick
 --- !u!1 &985675840495817084
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,3 +201,80 @@ MonoBehaviour:
       Data3: -736009580
       Data4: 1634410288
     Path: event:/Forest
+  <music>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <burningCampfire>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <pickup>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <mushroomRoast>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <waterEnter>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <torch>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <pageFlip>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <Chewing>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MoveLand>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MoveWater>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
