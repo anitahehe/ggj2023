@@ -47,6 +47,21 @@ public class AudioManager : MonoBehaviour
         InitEventInstances();
     }
 
+    void OnButtonClick()
+    {
+        RuntimeManager.PlayOneShot(FModEvents.Instance.buttonClick, player.transform.position);
+    }
+
+    void OnPickup()
+    {
+        RuntimeManager.PlayOneShot(FModEvents.Instance.pickup, player.transform.position);
+    }
+
+    void OnEnterWater()
+    {
+        RuntimeManager.PlayOneShot(FModEvents.Instance.waterEnter, player.transform.position);
+    }
+
     void InitEventInstances()
     {
         ambienceEventInstance = RuntimeManager.CreateInstance(FModEvents.Instance.ambience);

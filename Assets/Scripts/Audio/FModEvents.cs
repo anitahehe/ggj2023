@@ -25,16 +25,8 @@ public class FModEvents : MonoBehaviour
     [field: SerializeField] public EventReference ambience { get; private set; }
     [field: SerializeField] public EventReference music { get; private set; }
     [field: SerializeField] public EventReference burningCampfire { get; private set; }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [field: SerializeField] public EventReference buttonClick { get; private set; }
+    [field: SerializeField] public EventReference pickup { get; private set; }
+    [field: SerializeField] public EventReference mushroomRoast { get; private set; }
+    [field: SerializeField] public EventReference waterEnter { get; private set; }
 }

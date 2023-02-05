@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1471972189}
   - component: {fileID: 1471972188}
+  - component: {fileID: 6649137109563372987}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -28,8 +29,7 @@ Transform:
   m_LocalPosition: {x: 42.32095, y: -55.916893, z: -3.8723755}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1774612799}
+  m_Children: []
   m_Father: {fileID: 5361105541602788341}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,47 +48,16 @@ MonoBehaviour:
   masterVolume: 1
   ambienceVolume: 0.2
   musicVolume: 0.4
-  VFXVolume: 0.6
+  SFXVolume: 1
   player: {fileID: 7805457231592944444}
---- !u!1 &1774612798
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1774612799}
-  - component: {fileID: 1774612800}
-  m_Layer: 0
-  m_Name: FModEvents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1774612799
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774612798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1471972189}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1774612800
+  campfire: {fileID: 0}
+--- !u!114 &6649137109563372987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774612798}
+  m_GameObject: {fileID: 1471972187}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfc80940ed9cf7141b82fd8f3bee421c, type: 3}
@@ -108,6 +77,41 @@ MonoBehaviour:
       Data3: -1234786151
       Data4: 568612318
     Path: event:/Music
+  <burningCampfire>k__BackingField:
+    Guid:
+      Data1: 2137027616
+      Data2: 1178893058
+      Data3: 2049705147
+      Data4: -1570553960
+    Path: event:/Campfire
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: 1199168098
+      Data2: 1208481757
+      Data3: 687198885
+      Data4: 2015097227
+    Path: event:/ButtonClick
+  <pickup>k__BackingField:
+    Guid:
+      Data1: -598316296
+      Data2: 1093464590
+      Data3: 1868742579
+      Data4: -395052649
+    Path: event:/Pickup
+  <mushroomRoast>k__BackingField:
+    Guid:
+      Data1: -177572758
+      Data2: 1302970124
+      Data3: -1758355295
+      Data4: 1815837867
+    Path: event:/MushroomRoast
+  <waterEnter>k__BackingField:
+    Guid:
+      Data1: 1422370653
+      Data2: 1190887811
+      Data3: 1650316686
+      Data4: 1145015044
+    Path: event:/WaterEnter
 --- !u!1 &5361105541602788342
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,15 +292,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7136476165977579076, guid: fc079aae42c6b6c44909b79fbcbd05a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -343.98
+      value: -5.52
       objectReference: {fileID: 0}
     - target: {fileID: 7136476165977579076, guid: fc079aae42c6b6c44909b79fbcbd05a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -27.63
+      value: -7.08
       objectReference: {fileID: 0}
     - target: {fileID: 7136476165977579076, guid: fc079aae42c6b6c44909b79fbcbd05a2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -499.9
+      value: 31.66
       objectReference: {fileID: 0}
     - target: {fileID: 7136476165977579076, guid: fc079aae42c6b6c44909b79fbcbd05a2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -374,11 +378,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1758263609156169402, guid: 6d1652b00f914304cb7a345db424548c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6000004
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 1758263609156169402, guid: 6d1652b00f914304cb7a345db424548c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.00003
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1758263609156169402, guid: 6d1652b00f914304cb7a345db424548c, type: 3}
       propertyPath: m_LocalRotation.w
