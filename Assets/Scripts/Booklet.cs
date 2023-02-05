@@ -2,29 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Booklet : MonoBehaviour
 {
-
-
+    public AutoFlip pageFlipper;
+    public GameObject bookObject;
+    Button bookControl;
     Animator bookAnimator;
+    public bool bookIsOpen;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        bookAnimator = this.GetComponent<Animator>();
+        bookControl = bookObject.GetComponent<Button>();
+        bookAnimator = bookObject.GetComponent<Animator>();
+
+        bookIsOpen = false;
     }
 
-    private void OnMouseOver()
+    private void Update()
     {
+        if (bookAnimator.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
+            bookIsOpen = false;
 
-        bookAnimator.SetBool("onHover", true);
-        Debug.Log("mouse over");
+        if (bookAnimator.GetCurrentAnimatorStateInfo(0).IsName("Selected"))
+            bookIsOpen = true;
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (bookIsOpen == false)
+            {
+                EventSystem.current.SetSelectedGameObject(bookObject);
+            }
+
+            if (bookIsOpen == true)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+            }
+
+        }
+
+
+
+
     }
 
-    private void OnMouseExit()
-    {
-        bookAnimator.SetBool("onHover", false);
-        Debug.Log("mouse gone");
-    }
+   
 }
+
