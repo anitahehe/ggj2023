@@ -40,6 +40,8 @@ public class CookingSpot : MonoBehaviour
         {
             fire.SetActive(false);
         }
+
+        PlayerSkewer = GameManager.instance.Player.GetComponentInChildren<Skewer>();
     }
     
     void Update()
@@ -154,7 +156,6 @@ public class CookingSpot : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        other.transform.parent.parent.gameObject.TryGetComponent<Skewer>(out PlayerSkewer);
         if (other.gameObject.name.Contains("Player"))
         {
             return;
