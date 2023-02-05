@@ -30,4 +30,6 @@ public class FModEvents : MonoBehaviour
     [field: SerializeField] public EventReference mushroomRoast { get; private set; }
     [field: SerializeField] public EventReference waterEnter { get; private set; }
     [field: SerializeField] public EventReference torch { get; private set; }
+    [field: SerializeField] public EventReference pageFlip { get; private set; }
+    [field: SerializeField] public EventReference Chewing { get; private set; }
 }
