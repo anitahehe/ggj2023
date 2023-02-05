@@ -17216,15 +17216,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1795523868, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.102458365
+      value: -0.10245839
       objectReference: {fileID: 0}
     - target: {fileID: 1795523868, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.117616594
+      value: -0.11761662
       objectReference: {fileID: 0}
     - target: {fileID: 1795523868, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.012201073
+      value: -0.012201078
       objectReference: {fileID: 0}
     - target: {fileID: 1795523869, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
       propertyPath: m_LookAt
@@ -37619,6 +37619,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene Essentials
       objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 3921c501-93e3-4888-9969-182e320b8ea6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Player/ClearSkewer[/Keyboard/r]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1625749900}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClearSkewer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Skewer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805457231592944436, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8507491217802912664, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
       propertyPath: mouseSensitivityCurve.m_Curve.Array.data[0].time
       value: -0.025001526
@@ -37649,6 +37689,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+--- !u!114 &1625749900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8664448124916830376, guid: b7dbdec784c43234c94594e9f31b6ee9, type: 3}
+  m_PrefabInstance: {fileID: 1625749899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc563792abe0ceb47b728bdf0f2ac994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1627221996
 PrefabInstance:
   m_ObjectHideFlags: 0
