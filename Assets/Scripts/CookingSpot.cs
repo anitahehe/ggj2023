@@ -15,13 +15,15 @@ public class CookingSpot : MonoBehaviour
     public Skewer PlayerSkewer;
     public CinemachineVirtualCamera CookingCamera;
     public CinemachineImpulseSource ImpulseSource;
-
+    [SerializeField] public SkinnedMeshRenderer SlugIdolMR;
+    
     [Header("Parameters")]
     public Vector3 fireOffset;
     public float cookTimer = 5.0f;
     public float cookTimeRangeLower = 1.0f;
     public float cookTimeRangeUpper = 5.0f;
-
+    private Color _origSlugIdolColor;
+    
     bool _isCooking = false;
     bool _isFeeding = false;
 
@@ -32,6 +34,8 @@ public class CookingSpot : MonoBehaviour
     }
     void Start()
     {
+        _origSlugIdolColor = SlugIdolMR.material.color;
+
         foreach (var fire in fireObjects)
         {
             fire.SetActive(false);
@@ -61,9 +65,9 @@ public class CookingSpot : MonoBehaviour
         AudioManager.Instance.OnBeginRoast();
 
         _isCooking = true;
-        foreach (var fire in fireObjects)
+        for (int i = 0; i < mushroomObjects.Count; i++)
         {
-            fire.SetActive(true);
+            fireObjects[i].SetActive(true);
         }
         StartCoroutine(BurningTimer());
     }
@@ -104,11 +108,14 @@ public class CookingSpot : MonoBehaviour
 
         if (poisonedSkewer > 0)
         {
-            GameManager.instance.PunishPlayer(poisonedSkewer);
+            SlugIdolMR.material.color = Color.red;
+            ScreenShake();
+            GameManager.instance.PunishPlayer(3);
         }
         else
         {
-            GameManager.instance.EatMushrooms(PlayerSkewer.MushroomsSkewered.Count);
+            SlugIdolMR.material.color = Color.green;
+            GameManager.instance.EatMushrooms(3);
         }
         
         foreach (GameObject mushroom in PlayerSkewer.MushroomsSkewered)
@@ -117,12 +124,7 @@ public class CookingSpot : MonoBehaviour
         }
         PlayerSkewer.MushroomsSkewered.Clear();
 
-        if (!GameManager.instance.GameIsEnding)
-        {
-            PlayerInput.all[0].currentActionMap.Enable();
-            CookingCamera.Priority = 0;
-        }
-        
+        StartCoroutine(FinishFoodTimer());
 
     }
     
@@ -134,9 +136,20 @@ public class CookingSpot : MonoBehaviour
     
     IEnumerator AcceptanceTimer()
     {
-        //ScreenShake();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         OnFeedingEnd();
+    }
+    
+    IEnumerator FinishFoodTimer()
+    {
+        yield return new WaitForSeconds(3f);
+        SlugIdolMR.material.color = _origSlugIdolColor;
+        if (!GameManager.instance.GameIsEnding)
+        {
+            PlayerInput.all[0].currentActionMap.Enable();
+            CookingCamera.Priority = 0;
+        }
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -146,7 +159,7 @@ public class CookingSpot : MonoBehaviour
         {
             return;
         }
-        if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer)
+        if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer && PlayerSkewer.MushroomsSkewered.Count == 3)
         {
             foreach (GameObject skeweredMushroom in PlayerSkewer.MushroomsSkewered)
             {
