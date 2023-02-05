@@ -15,16 +15,16 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.34999108, g: 0.43755683, b: 0.5188679, a: 1}
+  m_FogColor: {r: 0.09976861, g: 0.19763473, b: 0.3584906, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 0.8745098, g: 0.12941177, b: 0.24705882, a: 1}
+  m_AmbientEquatorColor: {r: 0.1764706, g: 0.13725491, b: 0.34901962, a: 1}
+  m_AmbientGroundColor: {r: 0.4392157, g: 0.3764706, b: 0.81960785, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.14150941, g: 0.12322356, b: 0.076762185, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 93b728e0b006d684783b38f2502714ca, type: 2}
   m_HaloStrength: 0.349
@@ -665,8 +665,11 @@ MonoBehaviour:
   - {fileID: 1838455257}
   - {fileID: 1268005463}
   Player: {fileID: 994865812}
+  GameEndingFadeToWhite: {fileID: 0}
   TotalMushroomsNeededToWin: 6
   mushroomsEaten: 0
+  GameIsEnding: 0
+  GameEndingTransitionLength: 5
 --- !u!4 &23212141
 Transform:
   m_ObjectHideFlags: 0
@@ -45445,24 +45448,24 @@ Transform:
   - {fileID: 503869325}
   - {fileID: 1902942371}
   - {fileID: 1852579014}
+  - {fileID: 852895829}
   - {fileID: 1060369818}
   - {fileID: 937687143}
   - {fileID: 297410606}
+  - {fileID: 1870355682}
   - {fileID: 476292383}
+  - {fileID: 1427816205}
   - {fileID: 742221951}
   - {fileID: 72594872}
+  - {fileID: 2136388755}
   - {fileID: 686118621}
   - {fileID: 430705050}
   - {fileID: 1874519565}
+  - {fileID: 1833965437}
   - {fileID: 1415349742}
+  - {fileID: 711423697}
   - {fileID: 794630793}
   - {fileID: 589623264}
-  - {fileID: 852895829}
-  - {fileID: 1870355682}
-  - {fileID: 2136388755}
-  - {fileID: 1427816205}
-  - {fileID: 1833965437}
-  - {fileID: 711423697}
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
