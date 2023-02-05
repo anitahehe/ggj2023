@@ -54,6 +54,7 @@ using UnityEngine;
         ForagableMushroom = null;
         mushroom.transform.position = SkewerSpots[MushroomsSkewered.Count].transform.position;
         mushroom.transform.parent = SkewerSpots[MushroomsSkewered.Count].transform;
+        AudioManager.Instance.OnPickup();
         MushroomsSkewered.Add(mushroom);
     }
     

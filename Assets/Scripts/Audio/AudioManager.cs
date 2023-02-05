@@ -35,31 +35,47 @@ public class AudioManager : MonoBehaviour
 
     [Header("Sources")]
     public GameObject player;
-    public GameObject campfire;
+    public List<GameObject> campfires = new List<GameObject>();
+    public List<GameObject> torches = new List<GameObject>();
+
+    List<EventInstance> sfxEventInstances;
 
     private EventInstance ambienceEventInstance;
     private EventInstance musicEventInstance;
-    private EventInstance campfireEventInstance;
+
+    bool isInWater = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        sfxEventInstances = new List<EventInstance>();
+
         InitEventInstances();
     }
 
-    void OnButtonClick()
+    public void OnButtonClick()
     {
         RuntimeManager.PlayOneShot(FModEvents.Instance.buttonClick, player.transform.position);
     }
 
-    void OnPickup()
+    public void OnBeginRoast()
+    {
+        RuntimeManager.PlayOneShot(FModEvents.Instance.mushroomRoast, player.transform.position);
+    }
+
+    public void OnPickup()
     {
         RuntimeManager.PlayOneShot(FModEvents.Instance.pickup, player.transform.position);
     }
 
-    void OnEnterWater()
+    public void OnEnterWater()
     {
         RuntimeManager.PlayOneShot(FModEvents.Instance.waterEnter, player.transform.position);
+        isInWater = true;
+    }
+    public void OnExitWater()
+    {
+        isInWater = false;
     }
 
     void InitEventInstances()
@@ -72,9 +88,22 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.AttachInstanceToGameObject(musicEventInstance, player.transform);
         musicEventInstance.start();
 
-        campfireEventInstance = RuntimeManager.CreateInstance(FModEvents.Instance.burningCampfire);
-        RuntimeManager.AttachInstanceToGameObject(campfireEventInstance, campfire.transform);
-        campfireEventInstance.start();
+        foreach (GameObject campfire in campfires)
+        {
+            EventInstance newFire = RuntimeManager.CreateInstance(FModEvents.Instance.burningCampfire);
+            RuntimeManager.AttachInstanceToGameObject(newFire, campfire.transform);
+            sfxEventInstances.Add(newFire);
+            newFire.start();
+        }
+
+        foreach (GameObject torch in torches)
+        {
+            EventInstance newTorch = RuntimeManager.CreateInstance(FModEvents.Instance.torch);
+            RuntimeManager.AttachInstanceToGameObject(newTorch, torch.transform);
+            sfxEventInstances.Add(newTorch);
+            newTorch.start();
+        }
+
     }
 
     // Update is called once per frame
@@ -82,14 +111,21 @@ public class AudioManager : MonoBehaviour
     {
         ambienceEventInstance.setVolume(ambienceVolume * masterVolume);
         musicEventInstance.setVolume(musicVolume * masterVolume);
-        campfireEventInstance.setVolume(SFXVolume * masterVolume);
 
+        foreach (EventInstance fire in sfxEventInstances)
+        {
+            fire.setVolume(SFXVolume * masterVolume);
+        }
     }
 
     private void OnDestroy()
     {
         ambienceEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        campfireEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        foreach (EventInstance fire in sfxEventInstances)
+        {
+            fire.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
     }
 }

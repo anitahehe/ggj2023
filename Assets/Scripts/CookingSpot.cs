@@ -58,7 +58,8 @@ public class CookingSpot : MonoBehaviour
         Debug.Log("start cooking");
         PlayerInput.all[0].currentActionMap.Disable();
         CookingCamera.Priority = 20;
-        
+        AudioManager.Instance.OnBeginRoast();
+
         _isCooking = true;
         foreach (var fire in fireObjects)
         {
