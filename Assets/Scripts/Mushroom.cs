@@ -5,4 +5,5 @@ using UnityEngine;
 public class Mushroom : MonoBehaviour
 {
     public bool Cooked = false;
+    public bool Poisinous = false;
 }
