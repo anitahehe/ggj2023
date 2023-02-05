@@ -189,5 +189,6 @@ public class PlayerStateController : MonoBehaviour
 	void Update()
     {
         currentState.UpdateStates();
+		AudioManager.Instance.UpdateIsMoving(isMovePressed);
 	}
 }

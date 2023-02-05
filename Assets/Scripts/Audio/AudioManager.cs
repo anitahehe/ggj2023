@@ -42,8 +42,12 @@ public class AudioManager : MonoBehaviour
 
     private EventInstance ambienceEventInstance;
     private EventInstance musicEventInstance;
+    private EventInstance moveLandEventInstance;
+    private EventInstance moveWaterEventInstance;
 
-    bool isInWater = false;
+    bool _isInWater = false;
+    bool _isMoving = false;
+    bool _wasMoving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +55,25 @@ public class AudioManager : MonoBehaviour
         sfxEventInstances = new List<EventInstance>();
 
         InitEventInstances();
+    }
+
+    public void UpdateIsMoving(bool isMoving)
+    {
+        _isMoving = isMoving;
+    }
+
+    public void SwitchMoving()
+    {
+        if (_isInWater)
+        {
+            moveLandEventInstance.setPaused(true);
+            moveWaterEventInstance.setPaused(false);
+        }
+        else
+        {
+            moveLandEventInstance.setPaused(false);
+            moveWaterEventInstance.setPaused(true);
+        }
     }
 
     public void OnButtonClick()
@@ -80,11 +103,13 @@ public class AudioManager : MonoBehaviour
     public void OnEnterWater()
     {
         RuntimeManager.PlayOneShot(FModEvents.Instance.waterEnter, player.transform.position);
-        isInWater = true;
+        _isInWater = true;
+        SwitchMoving();
     }
     public void OnExitWater()
     {
-        isInWater = false;
+        _isInWater = false;
+        SwitchMoving();
     }
 
     void InitEventInstances()
@@ -96,6 +121,15 @@ public class AudioManager : MonoBehaviour
         musicEventInstance = RuntimeManager.CreateInstance(FModEvents.Instance.music);
         RuntimeManager.AttachInstanceToGameObject(musicEventInstance, player.transform);
         musicEventInstance.start();
+
+        moveLandEventInstance = RuntimeManager.CreateInstance(FModEvents.Instance.MoveLand);
+        RuntimeManager.AttachInstanceToGameObject(moveLandEventInstance, player.transform);
+        moveLandEventInstance.start();
+        moveLandEventInstance.setPaused(true);
+        moveWaterEventInstance = RuntimeManager.CreateInstance(FModEvents.Instance.MoveWater);
+        RuntimeManager.AttachInstanceToGameObject(moveWaterEventInstance, player.transform);
+        moveWaterEventInstance.start();
+        moveWaterEventInstance.setPaused(true);
 
         foreach (GameObject campfire in campfires)
         {
@@ -118,8 +152,23 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_isMoving != _wasMoving)
+        {
+            if (_isInWater)
+            {
+                moveWaterEventInstance.setPaused(!_isMoving);
+            }
+            else
+            {
+                moveLandEventInstance.setPaused(!_isMoving);
+            }
+            _wasMoving = _isMoving;
+        }
+
         ambienceEventInstance.setVolume(ambienceVolume * masterVolume);
         musicEventInstance.setVolume(musicVolume * masterVolume);
+        moveLandEventInstance.setVolume(SFXVolume * masterVolume);
+        moveWaterEventInstance.setVolume(SFXVolume * masterVolume);
 
         foreach (EventInstance fire in sfxEventInstances)
         {
@@ -131,6 +180,8 @@ public class AudioManager : MonoBehaviour
     {
         ambienceEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        moveLandEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        moveWaterEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
         foreach (EventInstance fire in sfxEventInstances)
         {
