@@ -103,6 +103,6 @@ public class GameManager : MonoBehaviour
             img.color = new Color(1, 1, 1, i / GameEndingTransitionLength);
             yield return null;
         }
-        SceneManager.LoadScene("EndingScene");
+        SceneManager.LoadScene("EndScene");
     }
 }
