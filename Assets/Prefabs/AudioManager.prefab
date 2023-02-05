@@ -46,8 +46,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   masterVolume: 1
-  ambienceVolume: 0.3
+  ambienceVolume: 0.2
+  musicVolume: 0.2
+  SFXVolume: 0.6
   player: {fileID: 0}
+  campfires: []
+  torches: []
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: 1199168098
+      Data2: 1208481757
+      Data3: 687198885
+      Data4: 2015097227
+    Path: event:/ButtonClick
 --- !u!1 &985675840495817084
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,3 +110,73 @@ MonoBehaviour:
       Data3: -736009580
       Data4: 1634410288
     Path: event:/Forest
+  <music>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <burningCampfire>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <pickup>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <mushroomRoast>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <waterEnter>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <torch>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <pageFlip>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <Chewing>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MoveLand>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MoveWater>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

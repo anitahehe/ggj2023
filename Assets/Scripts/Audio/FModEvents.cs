@@ -25,7 +25,6 @@ public class FModEvents : MonoBehaviour
     [field: SerializeField] public EventReference ambience { get; private set; }
     [field: SerializeField] public EventReference music { get; private set; }
     [field: SerializeField] public EventReference burningCampfire { get; private set; }
-    [field: SerializeField] public EventReference buttonClick { get; private set; }
     [field: SerializeField] public EventReference pickup { get; private set; }
     [field: SerializeField] public EventReference mushroomRoast { get; private set; }
     [field: SerializeField] public EventReference waterEnter { get; private set; }

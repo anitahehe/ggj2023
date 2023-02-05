@@ -1189,6 +1189,78 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e1ea7f74612bf2409227fd7b13be9d1, type: 3}
+--- !u!1001 &44873592
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 985675840455631641, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631646, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 690301029}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 47.84095
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -48.83689
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -35.532375
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985675840455631647, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+--- !u!114 &44873593 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 985675840455631646, guid: 30f07e08d6c79f84292af18ba491ceb5, type: 3}
+  m_PrefabInstance: {fileID: 44873592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0275ac52302ca945acccb88634cacd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &46080308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8929002069412551739, guid: 3c93b2ebe78e2fa48b763dff787aaeef, type: 3}
@@ -17269,6 +17341,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
+--- !u!1 &690301029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1795523867, guid: dec8963cc3e429d4e985b053b441af85, type: 3}
+  m_PrefabInstance: {fileID: 690301028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &690301030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690301029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 690301029}
 --- !u!4 &690347033 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 157542235833823428, guid: 3efef0c3914bf95429aeb0141ca3a994, type: 3}
@@ -22227,6 +22317,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1662548613}
   - {fileID: 420228872}
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &930491829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2225471985321636956, guid: 8675a68ceb6c1e048a68267417757d73, type: 3}
@@ -43762,7 +43859,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1920846011}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 44873593}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1920846008
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -51462,13 +51571,6 @@ MonoBehaviour:
       Data3: 2049705147
       Data4: -1570553960
     Path: event:/Campfire
-  <buttonClick>k__BackingField:
-    Guid:
-      Data1: 1199168098
-      Data2: 1208481757
-      Data3: 687198885
-      Data4: 2015097227
-    Path: event:/ButtonClick
   <pickup>k__BackingField:
     Guid:
       Data1: -598316296
@@ -51505,6 +51607,20 @@ MonoBehaviour:
       Data4: 0
     Path: 
   <Chewing>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MoveLand>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <MoveWater>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0

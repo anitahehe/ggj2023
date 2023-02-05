@@ -38,6 +38,9 @@ public class AudioManager : MonoBehaviour
     public List<GameObject> campfires = new List<GameObject>();
     public List<GameObject> torches = new List<GameObject>();
 
+    [field: SerializeField] public EventReference buttonClick { get; private set; }
+
+
     List<EventInstance> sfxEventInstances;
 
     private EventInstance ambienceEventInstance;
@@ -78,7 +81,7 @@ public class AudioManager : MonoBehaviour
 
     public void OnButtonClick()
     {
-        RuntimeManager.PlayOneShot(FModEvents.Instance.buttonClick, player.transform.position);
+        RuntimeManager.PlayOneShot(buttonClick, player.transform.position);
     }
     public void OnChew()
     {

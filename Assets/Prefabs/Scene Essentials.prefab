@@ -66,9 +66,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: 1199168098
+      Data2: 1208481757
+      Data3: 687198885
+      Data4: 2015097227
+    Path: event:/ButtonClick
 --- !u!114 &6649137109563372987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,13 +106,6 @@ MonoBehaviour:
       Data3: 2049705147
       Data4: -1570553960
     Path: event:/Campfire
-  <buttonClick>k__BackingField:
-    Guid:
-      Data1: 1199168098
-      Data2: 1208481757
-      Data3: 687198885
-      Data4: 2015097227
-    Path: event:/ButtonClick
   <pickup>k__BackingField:
     Guid:
       Data1: -598316296
