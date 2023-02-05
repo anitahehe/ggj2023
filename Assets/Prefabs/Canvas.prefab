@@ -691,7 +691,7 @@ PrefabInstance:
     - target: {fileID: 11430880, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c4b0ccd823920e845bc3b375a8d4e02f, type: 3}
+      objectReference: {fileID: 21300000, guid: fc1ad5c7721bf044ba76511e3067c503, type: 3}
     - target: {fileID: 22436914, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 2
@@ -820,12 +820,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mode: 1
-  PageFlipTime: 1
-  TimeBetweenPages: 1
+  PageFlipTime: 0.1
+  TimeBetweenPages: 0.1
   DelayBeforeStarting: 0
   AutoStartFlip: 0
   ControledBook: {fileID: 2128572549014505297}
-  AnimationFramesCount: 40
+  AnimationFramesCount: 10
 --- !u!114 &2128572549014505297 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
