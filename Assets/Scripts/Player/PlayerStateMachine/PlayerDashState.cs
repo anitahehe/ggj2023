@@ -18,9 +18,14 @@ public class PlayerDashState : PlayerBaseState
 	public override void CheckSwitchStates()
 	{
 		if (!ctx.IsMovePressed)
+		{
+			dashComplete = true;
 			SwitchState(Factory.Idle());
+		}
 		else
+		{
 			SwitchState(Factory.Move());
+		}
 	}
 
 	public override void EnterState()
@@ -54,7 +59,6 @@ public class PlayerDashState : PlayerBaseState
 
 		if (timer >= ctx.dashDuration)
 		{
-			dashComplete = true;
 			CheckSwitchStates();
 			return;
 		}

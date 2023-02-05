@@ -21,7 +21,7 @@ using UnityEngine;
         List<GameObject> mushroomsNearMe = new List<GameObject>();
         foreach (var hitCollider in detected)
         {
-            if (hitCollider.gameObject.tag == "Mushroom")
+            if (hitCollider.gameObject.tag == "Mushroom" && !MushroomsSkewered.Contains(hitCollider.gameObject))
             {
                 // I have a mushroom near me!
                 mushroomsNearMe.Add(hitCollider.gameObject);
@@ -76,8 +76,15 @@ using UnityEngine;
     {
         foreach (GameObject mushroom in MushroomsSkewered)
         {
-            MushroomsSkewered.Remove(mushroom);
             Destroy(mushroom);
         }
+        MushroomsSkewered.Clear();
+    }
+
+    public void TeleportHome()
+    {
+        GameManager.instance.Player.SetActive(false);
+        GameManager.instance.Player.transform.position = GameManager.instance.HomePoint.transform.position;
+        GameManager.instance.Player.SetActive(true);
     }
 }
