@@ -116,8 +116,13 @@ public class CookingSpot : MonoBehaviour
             Destroy(mushroom);
         }
         PlayerSkewer.MushroomsSkewered.Clear();
-        PlayerInput.all[0].currentActionMap.Enable();
-        CookingCamera.Priority = 0;
+
+        if (!GameManager.instance.GameIsEnding)
+        {
+            PlayerInput.all[0].currentActionMap.Enable();
+            CookingCamera.Priority = 0;
+        }
+        
 
     }
     
