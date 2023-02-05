@@ -12,7 +12,7 @@ using UnityEngine;
     {
         MushroomsSkewered = new HashSet<GameObject>();
     }
-
+    
     void Update()
     {
         // Find Mushrooms near me!
@@ -64,11 +64,11 @@ using UnityEngine;
 
         if (GatherSkewer)
         {
-            transform.Rotate(0,0,45f);
+            transform.Rotate(0,0,60f);
         }
         else
         {
-            transform.Rotate(0,0,-45f);
+            transform.Rotate(0,0,-60f);
         }
     }
 

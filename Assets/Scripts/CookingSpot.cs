@@ -15,13 +15,15 @@ public class CookingSpot : MonoBehaviour
     public Skewer PlayerSkewer;
     public CinemachineVirtualCamera CookingCamera;
     public CinemachineImpulseSource ImpulseSource;
-
+    [SerializeField] public SkinnedMeshRenderer SlugIdolMR;
+    
     [Header("Parameters")]
     public Vector3 fireOffset;
     public float cookTimer = 5.0f;
     public float cookTimeRangeLower = 1.0f;
     public float cookTimeRangeUpper = 5.0f;
-
+    private Color _origSlugIdolColor;
+    
     bool _isCooking = false;
     bool _isFeeding = false;
 
@@ -32,6 +34,8 @@ public class CookingSpot : MonoBehaviour
     }
     void Start()
     {
+        _origSlugIdolColor = SlugIdolMR.material.color;
+
         foreach (var fire in fireObjects)
         {
             fire.SetActive(false);
@@ -104,11 +108,13 @@ public class CookingSpot : MonoBehaviour
 
         if (poisonedSkewer > 0)
         {
+            SlugIdolMR.material.color = Color.red;
             ScreenShake();
             GameManager.instance.PunishPlayer(3);
         }
         else
         {
+            SlugIdolMR.material.color = Color.green;
             GameManager.instance.EatMushrooms(3);
         }
         
@@ -137,12 +143,13 @@ public class CookingSpot : MonoBehaviour
     IEnumerator FinishFoodTimer()
     {
         yield return new WaitForSeconds(3f);
-        
+        SlugIdolMR.material.color = _origSlugIdolColor;
         if (!GameManager.instance.GameIsEnding)
         {
             PlayerInput.all[0].currentActionMap.Enable();
             CookingCamera.Priority = 0;
         }
+        
     }
 
     void OnTriggerEnter(Collider other)
