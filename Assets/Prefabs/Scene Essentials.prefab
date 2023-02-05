@@ -48,7 +48,7 @@ MonoBehaviour:
   masterVolume: 1
   ambienceVolume: 0.2
   musicVolume: 0.4
-  SFXVolume: 1
+  SFXVolume: 0.6
   player: {fileID: 7805457231592944444}
   campfires:
   - {fileID: 0}
@@ -137,6 +137,20 @@ MonoBehaviour:
       Data3: -51538788
       Data4: 2099890160
     Path: event:/Torch
+  <pageFlip>k__BackingField:
+    Guid:
+      Data1: -495829907
+      Data2: 1306747513
+      Data3: -769486167
+      Data4: -1082010920
+    Path: event:/Flip
+  <Chewing>k__BackingField:
+    Guid:
+      Data1: 653208155
+      Data2: 1186688922
+      Data3: 893859970
+      Data4: -1269590341
+    Path: event:/Chewing
 --- !u!1 &5361105541602788342
 GameObject:
   m_ObjectHideFlags: 0

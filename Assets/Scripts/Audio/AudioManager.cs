@@ -57,6 +57,15 @@ public class AudioManager : MonoBehaviour
     {
         RuntimeManager.PlayOneShot(FModEvents.Instance.buttonClick, player.transform.position);
     }
+    public void OnChew()
+    {
+        RuntimeManager.PlayOneShot(FModEvents.Instance.Chewing, player.transform.position);
+    }
+
+    public void OnPageFlip()
+    {
+        RuntimeManager.PlayOneShot(FModEvents.Instance.pageFlip, player.transform.position);
+    }
 
     public void OnBeginRoast()
     {

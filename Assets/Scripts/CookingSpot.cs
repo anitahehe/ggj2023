@@ -85,6 +85,7 @@ public class CookingSpot : MonoBehaviour
             mushroom.GetComponentInChildren<Mushroom>().Cooked = true;
         }
         mushroomObjects.Clear();
+        AudioManager.Instance.OnChew();
         StartCoroutine(AcceptanceTimer());
     }
     
