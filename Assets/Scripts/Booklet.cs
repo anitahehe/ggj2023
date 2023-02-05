@@ -6,45 +6,47 @@ using UnityEngine.EventSystems;
 
 public class Booklet : MonoBehaviour
 {
+    public bool bookIsOpen;
     public AutoFlip pageFlipper;
     public GameObject bookObject;
-    Button bookControl;
     Animator bookAnimator;
-    public bool bookIsOpen;
 
     private void Start()
     {
-        bookControl = bookObject.GetComponent<Button>();
         bookAnimator = bookObject.GetComponent<Animator>();
-
         bookIsOpen = false;
     }
 
     private void Update()
     {
+        //Set status of whether the book is opened based on the animator status
         if (bookAnimator.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
             bookIsOpen = false;
-
         if (bookAnimator.GetCurrentAnimatorStateInfo(0).IsName("Selected"))
             bookIsOpen = true;
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        //Closes book + allows left/right arrow to move
+        if (bookIsOpen == true)
         {
-            if (bookIsOpen == false)
-            {
-                EventSystem.current.SetSelectedGameObject(bookObject);
-            }
-
-            if (bookIsOpen == true)
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
                 EventSystem.current.SetSelectedGameObject(null);
+                bookAnimator.SetTrigger("Normal");
             }
 
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+                pageFlipper.FlipLeftPage();
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+                pageFlipper.FlipRightPage();
         }
 
-
-
-
+        //Opens book on tab
+        if (bookIsOpen == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+                EventSystem.current.SetSelectedGameObject(bookObject);
+        }
     }
 
    
