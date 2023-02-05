@@ -61,9 +61,9 @@ public class CookingSpot : MonoBehaviour
         AudioManager.Instance.OnBeginRoast();
 
         _isCooking = true;
-        foreach (var fire in fireObjects)
+        for (int i = 0; i < mushroomObjects.Count; i++)
         {
-            fire.SetActive(true);
+            fireObjects[i].SetActive(true);
         }
         StartCoroutine(BurningTimer());
     }
@@ -146,7 +146,7 @@ public class CookingSpot : MonoBehaviour
         {
             return;
         }
-        if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer)
+        if (other.CompareTag("Mushroom") && !_isCooking && PlayerSkewer.GatherSkewer && PlayerSkewer.MushroomsSkewered.Count == 3)
         {
             foreach (GameObject skeweredMushroom in PlayerSkewer.MushroomsSkewered)
             {
