@@ -151,6 +151,20 @@ MonoBehaviour:
       Data3: 893859970
       Data4: -1269590341
     Path: event:/Chewing
+  <MoveLand>k__BackingField:
+    Guid:
+      Data1: -1318664167
+      Data2: 1316195849
+      Data3: 988863873
+      Data4: -201629775
+    Path: event:/Movement
+  <MoveWater>k__BackingField:
+    Guid:
+      Data1: -1956582300
+      Data2: 1075765056
+      Data3: -1641835595
+      Data4: 843504597
+    Path: event:/MovementWater
 --- !u!1 &5361105541602788342
 GameObject:
   m_ObjectHideFlags: 0
