@@ -95,6 +95,11 @@ public class CookingSpot : MonoBehaviour
         foreach (GameObject mushroom in PlayerSkewer.MushroomsSkewered)
         {
             // TODO: Check if poisonous and act accordingly, otherwise progress game.
+            if (mushroom.GetComponent<Mushroom>().Poisinous)
+            {
+                poisonedSkewer = true;
+                break;
+            }
         }
 
         if (poisonedSkewer)
