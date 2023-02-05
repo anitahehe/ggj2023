@@ -39,6 +39,8 @@ public class Booklet : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.RightArrow))
                 pageFlipper.FlipRightPage();
+
+            Camera.main.GetComponent<Cinemachine.CinemachineBrain>().enabled = false;
         }
 
         //Opens book on tab
@@ -46,6 +48,8 @@ public class Booklet : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Tab))
                 EventSystem.current.SetSelectedGameObject(bookObject);
+
+            Camera.main.GetComponent<Cinemachine.CinemachineBrain>().enabled = true;
         }
     }
 
