@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityTemplateProjects;
 
 public class Booklet : MonoBehaviour
 {
@@ -11,10 +13,12 @@ public class Booklet : MonoBehaviour
     public GameObject bookObject;
     Animator bookAnimator;
 
+
     private void Start()
     {
         bookAnimator = bookObject.GetComponent<Animator>();
         bookIsOpen = false;
+
     }
 
     private void Update()
@@ -44,6 +48,7 @@ public class Booklet : MonoBehaviour
                 pageFlipper.FlipRightPage();
 
             Camera.main.GetComponent<Cinemachine.CinemachineBrain>().enabled = false;
+            Camera.main.GetComponent<SimpleCameraController>().enabled = false;
         }
 
         //Opens book on tab
@@ -56,6 +61,7 @@ public class Booklet : MonoBehaviour
             }
 
             Camera.main.GetComponent<Cinemachine.CinemachineBrain>().enabled = true;
+            Camera.main.GetComponent<SimpleCameraController>().enabled = true;
         }
     }
 
